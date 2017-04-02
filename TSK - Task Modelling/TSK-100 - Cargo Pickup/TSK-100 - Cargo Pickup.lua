@@ -12,24 +12,27 @@
 -- 
 
 do
-  HQ = GROUP:FindByName( "HQ", "Bravo HQ" )
+  local HQ = GROUP:FindByName( "HQ", "Bravo HQ" )
 
-  CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
+  local CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
 
-  Scoring = SCORING:New( "Pickup Demo" )
+  local Scoring = SCORING:New( "Pickup Demo" )
 
-  Mission = MISSION
+  local Mission = MISSION
     :New( CommandCenter, "Transport", "High", "Pickup the team", coalition.side.BLUE )
     :AddScoring( Scoring )
 
-  TransportHelicopters = SET_GROUP:New():FilterPrefixes( "Transport" ):FilterStart()
+  local TransportHelicopters = SET_GROUP:New():FilterPrefixes( "Transport" ):FilterStart()
 
-  CargoEngineer = UNIT:FindByName( "Engineer" )
+  local CargoEngineer = UNIT:FindByName( "Engineer" )
   InfantryCargo = AI_CARGO_UNIT:New( CargoEngineer, "Engineer", "Engineer Sven", "81", 500, 25 )
   
-  SetCargo = SET_CARGO:New():FilterTypes( "Engineer" ):FilterStart()
+  local SetCargo = SET_CARGO:New():FilterTypes( "Engineer" ):FilterStart()
 
   Task_Cargo_Pickup = TASK_CARGO_TRANSPORT:New( Mission, TransportHelicopters, "Transport.001", SetCargo )
+  
+  Task_Cargo_Pickup:AddDeployZone( ZONE_POLYGON:New( "DeployZone1", GROUP:FindByName("DeployZone1") ), TaskUnit )
+  Task_Cargo_Pickup:AddDeployZone( ZONE_POLYGON:New( "DeployZone2", GROUP:FindByName("DeployZone2") ), TaskUnit )
 
 end	
 					
