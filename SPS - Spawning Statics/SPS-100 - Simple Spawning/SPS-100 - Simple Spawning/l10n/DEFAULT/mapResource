@@ -1,0 +1,6 @@
+mapResource = 
+{
+    ["ResKey_Action_52"] = "Moose.lua",
+    ["ResKey_Action_1"] = "MOOSE_Spawn_Test.lua",
+    ["ResKey_Action_79"] = "SPS-100 - Simple Spawning.lua",
+} -- end of mapResource
