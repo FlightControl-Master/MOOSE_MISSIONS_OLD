@@ -38,7 +38,6 @@ PlaneSpawnBlue = SPAWN
       PlaneGroupsBlue[SpawnGroupName].OnEventHit = function( self, EventData )
         self:F( EventData )
         self:MessageToAll( "I just got hit!", 15, "Alert!" )
-        PlaneGroupsBlue[self:GetName()] = nil
       end
     end
     )
@@ -54,14 +53,16 @@ PlaneSpawnRed = SPAWN
       PlaneGroupsRed[SpawnGroupName]:HandleEvent( EVENTS.Shot )
       PlaneGroupsRed[SpawnGroupName]:HandleEvent( EVENTS.Hit )
       collectgarbage()
+      --- @param self
+      -- @param Core.Event#EVENTDATA EventData
       PlaneGroupsRed[SpawnGroupName].OnEventShot = function ( self, EventData )
         self:F( EventData )
+        
         self:MessageToAll( "I just got hit!", 15, "Alert!" )
       end
       PlaneGroupsRed[SpawnGroupName].OnEventHit = function( self, EventData )
         self:F( EventData )
         self:MessageToAll( "I just fired a missile!", 15, "Alert!" )
-        PlaneGroupsRed[self:GetName()] = nil
       end
     end
     )
