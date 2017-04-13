@@ -27,7 +27,7 @@ do
   local SetCargo = SET_CARGO:New():FilterTypes( "Engineers" ):FilterStart()
 
   local EngineersGroup = GROUP:FindByName( "Engineers" )
-  local CargoGroup = CARGO_GROUP:New( EngineersGroup, "Engineer", "Engineer", 500 )
+  local CargoGroup = CARGO_GROUP:New( EngineersGroup, "Engineers", "Engineers", 500 )
 
 
   CargoTransportTask = TASK_CARGO_TRANSPORT:New( Mission, APC, "Transport.001", SetCargo )
