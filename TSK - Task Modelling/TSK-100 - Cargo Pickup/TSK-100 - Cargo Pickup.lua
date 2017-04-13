@@ -31,8 +31,8 @@ do
 
   Task_Cargo_Pickup = TASK_CARGO_TRANSPORT:New( Mission, TransportHelicopters, "Transport.001", SetCargo )
   
-  Task_Cargo_Pickup:AddDeployZone( ZONE_POLYGON:New( "DeployZone1", GROUP:FindByName("DeployZone1") ), TaskUnit )
-  Task_Cargo_Pickup:AddDeployZone( ZONE_POLYGON:New( "DeployZone2", GROUP:FindByName("DeployZone2") ), TaskUnit )
+  Task_Cargo_Pickup:AddDeployZone( ZONE_POLYGON:New( "DeployZone1", GROUP:FindByName("DeployZone1") ) )
+  Task_Cargo_Pickup:AddDeployZone( ZONE_POLYGON:New( "DeployZone2", GROUP:FindByName("DeployZone2") ) )
 
 end	
 					
