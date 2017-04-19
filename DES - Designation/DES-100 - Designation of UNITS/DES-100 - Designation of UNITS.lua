@@ -25,3 +25,4 @@ AttackSet = SET_GROUP:New():FilterPrefixes("Attack"):FilterStart()
 
 RecceDesignation = AI_DESIGNATE:New( RecceDetection, AttackSet )
 RecceDesignation:__Detect( -5 )
+
