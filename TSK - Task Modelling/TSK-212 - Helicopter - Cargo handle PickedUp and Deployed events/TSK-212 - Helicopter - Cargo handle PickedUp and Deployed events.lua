@@ -55,6 +55,7 @@ do
   -- @param Core.Cargo#CARGO Cargo The Cargo that got PickedUp by the TaskUnit. You can use this to check Cargo Status.
   -- @param Core.Zone#ZONE DeployZone The zone where the Cargo got Deployed or UnBoarded.
   function CargoTransportTask:OnAfterCargoDeployed( From, Event, To, TaskUnit, Cargo, DeployZone )
+    self:F({From, Event, To, TaskUnit, Cargo, DeployZone})
   
     CommandCenter:MessageToCoalition( "Cargo " .. Cargo:GetName() .. " got successfully transported." )
     
@@ -72,8 +73,8 @@ do
       end
     end
     
-    if CargoTransportTask:IsAllCargoTransported() then
-      CargoTransportTask:Success()
+    if self:IsAllCargoTransported() then
+      self:Success()
     end
   
   end
