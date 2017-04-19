@@ -1,13 +1,22 @@
+---
+-- Name: CGO-102 - Group Unboarding
+-- Author: FlightControl
+-- Date Created: 13 Apr 2017
+--
+-- # Situation:
+-- 
+-- A cargo group called Infantry with Engineers is unboarding the Carrier "Carrier".
+-- 
+-- # Test cases: 
+-- 
+-- 1. Observe that the cargo is unboarding.
+-- 
 
-CargoSet = SET_BASE:New()
-CargoSet:Add( "Engineer1", AI_CARGO_UNIT:New( UNIT:FindByName( "Engineer1" ), "Engineers", "Engineer", 81, 2000, 25 ) )
-CargoSet:Add( "Engineer2", AI_CARGO_UNIT:New( UNIT:FindByName( "Engineer2" ), "Engineers", "Engineer", 64, 2000, 25 ) )
-CargoSet:Add( "Engineer3", AI_CARGO_UNIT:New( UNIT:FindByName( "Engineer3" ), "Engineers", "Engineer", 72, 2000, 25 ) )
-CargoSet:Add( "Engineer4", AI_CARGO_UNIT:New( UNIT:FindByName( "Engineer4" ), "Engineers", "Engineer", 69, 2000, 25 ) )
+local InfantryGroup = GROUP:FindByName( "Infantry" )
 
-InfantryCargo = AI_CARGO_GROUPED:New( CargoSet, "Engineers", "Engineers", 2000, 25 )
+local InfantryCargo = CARGO_GROUP:New( InfantryGroup, "Engineers", "Infantry Engineers", 2000 )
 
-CargoCarrier = UNIT:FindByName( "Carrier" )
+local CargoCarrier = UNIT:FindByName( "Carrier" )
 
 -- This will Load immediately the Cargo into the Carrier, regardless where the Cargo is.
 InfantryCargo:Load( CargoCarrier )
