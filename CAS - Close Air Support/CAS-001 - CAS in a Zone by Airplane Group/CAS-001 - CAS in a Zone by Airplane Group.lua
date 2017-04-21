@@ -61,7 +61,7 @@ Check, CheckScheduleID = SCHEDULER:New(nil,
       BASE:E( "Test Mission: " .. Targets:GetSize() .. " targets left to be destroyed.")
     else
       BASE:E( "Test Mission: The required targets are destroyed." )
-      AICasZone:__Accomplish( 1 ) -- Now they should fly back to teh patrolzone and patrol.
+      AICasZone:__Accomplish( 1 ) -- Now they should fly back to the patrolzone and patrol.
     end
   end, {}, 20, 60, 0.2 )
 
