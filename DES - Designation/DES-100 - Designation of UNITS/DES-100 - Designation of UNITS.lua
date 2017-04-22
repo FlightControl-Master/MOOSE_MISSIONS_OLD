@@ -24,6 +24,6 @@ RecceDetection = DETECTION_TYPES:New( RecceSetGroup )
 AttackSet = SET_GROUP:New():FilterPrefixes("Attack"):FilterStart()
 
 RecceDesignation = AI_DESIGNATE:New( RecceDetection, AttackSet )
-RecceDesignation:SetLaserCodes({1113})
+RecceDesignation:SetLaserCodes({1113,1131,1256})
 RecceDesignation:__Detect( -5 )
 
