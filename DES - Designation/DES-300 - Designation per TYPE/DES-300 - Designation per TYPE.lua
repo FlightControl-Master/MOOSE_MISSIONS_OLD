@@ -1,11 +1,11 @@
 ---
--- Name: DES-100 - Designation of UNITS
+-- Name: DES-300 - Designation per TYPE
 -- Author: FlightControl
--- Date Created: 02 Apr 2017
+-- Date Created: 23 Apr 2017
 --
 -- # Situation:
 --
--- Demonstrates the designation of units, which are grouped per UNIT.
+-- Demonstrates the designation of units, which are grouped per unit TYPE.
 -- 
 -- A Set of Recce are detecting a large group of units.
 -- 
@@ -35,17 +35,16 @@
 --   - Check that when you illuminate a target group, that a message appears that the Recce is illuminating the target.
 --   - Check that when you illuminate a target group, that the target area gets illuminated after a while.
 
-
 RecceSetGroup = SET_GROUP:New():FilterPrefixes( "Recce" ):FilterStart()
 
 HQ = GROUP:FindByName( "HQ" )
 
 CC = COMMANDCENTER:New( HQ, "HQ" )
 
--- Let the RecceSetGroup vehicles in the collection detect targets and group them per UNIT. (So there is no grouping here :-))
-RecceDetection = DETECTION_UNITS:New( RecceSetGroup )
+-- Let the RecceSetGroup vehicles in the collection detect targets and group them per unit TYPE.
+RecceDetection = DETECTION_TYPES:New( RecceSetGroup )
 
-AttackSet = SET_GROUP:New():FilterPrefixes("Attack"):FilterStart()
+AttackSet = SET_GROUP:New():FilterPrefixes( "Attack" ):FilterStart()
 
 RecceDesignation = AI_DESIGNATE:New( RecceDetection, AttackSet )
 RecceDesignation:SetLaserCodes({1113,1131,1256})

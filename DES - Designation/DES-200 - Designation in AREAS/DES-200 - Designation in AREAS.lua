@@ -1,11 +1,11 @@
 ---
--- Name: DES-100 - Designation of UNITS
+-- Name: DES-200 - Designation in AREAS
 -- Author: FlightControl
--- Date Created: 02 Apr 2017
+-- Date Created: 23 Apr 2017
 --
 -- # Situation:
 --
--- Demonstrates the designation of units, which are grouped per UNIT.
+-- Demonstrates the designation of units, which are grouped in AREAs.
 -- 
 -- A Set of Recce are detecting a large group of units.
 -- 
@@ -42,9 +42,10 @@ HQ = GROUP:FindByName( "HQ" )
 
 CC = COMMANDCENTER:New( HQ, "HQ" )
 
--- Let the RecceSetGroup vehicles in the collection detect targets and group them per UNIT. (So there is no grouping here :-))
-RecceDetection = DETECTION_UNITS:New( RecceSetGroup )
+-- Let the RecceSetGroup vehicles in the collection detect targets and group them in AREAS of 1000 meters.
+RecceDetection = DETECTION_AREAS:New( RecceSetGroup, 1000 )
 
+-- Create a 
 AttackSet = SET_GROUP:New():FilterPrefixes("Attack"):FilterStart()
 
 RecceDesignation = AI_DESIGNATE:New( RecceDetection, AttackSet )
