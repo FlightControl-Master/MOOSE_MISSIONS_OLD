@@ -10,22 +10,22 @@
 -- # Test cases: 
 -- 
 -- 
-HQ = GROUP:FindByName( "HQ", "Bravo HQ" )
+local HQ = GROUP:FindByName( "HQ", "Bravo HQ" )
 
-CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
+local CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
 
-Scoring = SCORING:New( "Detect Demo" )
+local Scoring = SCORING:New( "Detect Demo" )
 
-Mission = MISSION
+local Mission = MISSION
   :New( CommandCenter, "Overlord", "High", "Attack Detect Mission Briefing", coalition.side.RED )
   :AddScoring( Scoring )
 
-FACSet = SET_GROUP:New():FilterPrefixes( "FAC" ):FilterCoalitions("red"):FilterStart()
+local FACSet = SET_GROUP:New():FilterPrefixes( "FAC" ):FilterCoalitions("red"):FilterStart()
 
-FACAreas = DETECTION_UNITS:New( FACSet )
+local FACAreas = DETECTION_UNITS:New( FACSet )
 
 
-AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
+local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
 
 TaskDispatcher = TASK_A2G_DISPATCHER:New( Mission, AttackGroups, FACAreas )
 

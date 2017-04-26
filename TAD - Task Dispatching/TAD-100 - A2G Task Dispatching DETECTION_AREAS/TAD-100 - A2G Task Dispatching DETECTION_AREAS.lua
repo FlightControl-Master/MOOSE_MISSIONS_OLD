@@ -15,21 +15,21 @@
 --    For test, each zone will have a circle of tyres, that are visible on the map too.
 -- 2. Check that the HQ provides menus to engage on a task set by the FACs.
 -- 
-HQ = GROUP:FindByName( "HQ", "Bravo HQ" )
+local HQ = GROUP:FindByName( "HQ", "Bravo HQ" )
 
-CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
+local CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
 
-Scoring = SCORING:New( "Detect Demo" )
+local Scoring = SCORING:New( "Detect Demo" )
 
-Mission = MISSION
+local Mission = MISSION
   :New( CommandCenter, "Overlord", "High", "Attack Detect Mission Briefing", coalition.side.RED )
   :AddScoring( Scoring )
 
-FACSet = SET_GROUP:New():FilterPrefixes( "FAC" ):FilterCoalitions("red"):FilterStart()
+local FACSet = SET_GROUP:New():FilterPrefixes( "FAC" ):FilterCoalitions("red"):FilterStart()
 
-FACAreas = DETECTION_AREAS:New( FACSet, 500 )
+local FACAreas = DETECTION_AREAS:New( FACSet, 500 )
 FACAreas:BoundDetectedZones()
 
-AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
-TaskDispatcher = TASK_A2G_DISPATCHER:New( Mission, HQ, AttackGroups, FACAreas )
+local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
+TaskDispatcher = TASK_A2G_DISPATCHER:New( Mission, AttackGroups, FACAreas )
 
