@@ -33,4 +33,4 @@ function RecceDetection:OnAfterDetect(From,Event,To)
   HQ:MessageToAll( DetectionReport, 15, "Detection" )
 end
 
-garbagecollect()
+collectgarbage()
