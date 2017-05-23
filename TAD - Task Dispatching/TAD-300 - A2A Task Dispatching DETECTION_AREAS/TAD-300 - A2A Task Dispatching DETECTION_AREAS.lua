@@ -27,7 +27,7 @@ local Mission = MISSION
 local EWRSet = SET_GROUP:New():FilterPrefixes( "EWR" ):FilterCoalitions("red"):FilterStart()
 
 local EWRDetection = DETECTION_AREAS:New( EWRSet, 6000 )
-EWRDetection:SetFriendliesRange( 40000 )
+EWRDetection:SetFriendliesRange( 10000 )
 EWRDetection:SetDetectionInterval(30)
 
 
