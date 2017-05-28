@@ -22,12 +22,18 @@ local CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
 local Scoring = SCORING:New( "Detect Demo" )
 
 local Mission = MISSION
-  :New( CommandCenter, "Overlord", "High", "Attack Detect Mission Briefing", coalition.side.RED )
+  :New( CommandCenter, 
+        "Stealth", 
+        "Primary", 
+        "Observe the FAC(A)s detecting targets and grouping them. " ..
+        "For each target group detected, HQ Lima will report the targets and create a radio menu where tasks can be assigned to you. " ..
+        "Engage on one of the tasks and destroy the detected targets. ",
+        coalition.side.RED )
   :AddScoring( Scoring )
 
 local FACSet = SET_GROUP:New():FilterPrefixes( "FAC" ):FilterCoalitions("red"):FilterStart()
 
-local FACAreas = DETECTION_AREAS:New( FACSet, 500 )
+local FACAreas = DETECTION_AREAS:New( FACSet, 1500 )
 FACAreas:BoundDetectedZones()
 
 local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
