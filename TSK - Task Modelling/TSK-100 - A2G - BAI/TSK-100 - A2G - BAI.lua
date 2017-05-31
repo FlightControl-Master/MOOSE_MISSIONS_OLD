@@ -24,4 +24,4 @@ AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack
 
 TargetSetUnit = SET_UNIT:New():FilterCoalitions("blue"):FilterPrefixes( "Target" ):FilterStart()
 
-TaskBAI = TASK_BAI:New( Mission, AttackGroups,"BAI", TargetSetUnit )
+TaskBAI = TASK_A2G_BAI:New( Mission, AttackGroups,"BAI", TargetSetUnit )
