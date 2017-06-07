@@ -14,7 +14,7 @@ A2ADispatcher = AI_A2A_DISPATCHER:New( DetectionSetGroup, 6000 )
 
 -- Initialize the dispatcher, setting up a border zone. This is a polygon, which takes the waypoints of a late activated group with the name CCCP Border as the boundaries of the border area.
 -- Any enemy crossing this border will be engaged.
-A2ADispatcher:InitBorderZone( { ZONE_POLYGON:New( "CCCP Border", GROUP:FindByName( "CCCP Border" ) ) } )
+--A2ADispatcher:InitBorderZone( { ZONE_POLYGON:New( "CCCP Border", GROUP:FindByName( "CCCP Border" ) ) } )
 
 -- Initialize the dispatcher, setting up a radius of 100km where any airborne friendly without an assignment within 100km radius from a detected target, will engage that target.
 A2ADispatcher:InitEngageRadius( 100000 )
@@ -22,27 +22,23 @@ A2ADispatcher:InitEngageRadius( 100000 )
 
 -- Setup the squadrons.
 
-A2ADispatcher
-  :SetSquadron( "Mineralnye", AIRBASE.Caucasus.Mineralnye_Vody, { "SQ CCCP SU-27" }, 20 )
-  :SetSquadronOverhead( "Mineralnye", 1 )
-  :SetSquadronGrouping( 2 )
+A2ADispatcher:SetSquadron( "Mineralnye", AIRBASE.Caucasus.Mineralnye_Vody, { "SQ CCCP SU-27" }, 20 )
+A2ADispatcher:SetSquadronOverhead( "Mineralnye", 1 )
+A2ADispatcher:SetSquadronGrouping( "Mineralnye", 2 )
 
-A2ADispatcher
-  :SetSquadron( "Maykop", AIRBASE.Caucasus.Maykop_Khanskaya, { "SQ CCCP MIG-31" }, 20 )
-  :SetSquadronOverhead( "Maykop", 1.5 )
+A2ADispatcher:SetSquadron( "Maykop", AIRBASE.Caucasus.Maykop_Khanskaya, { "SQ CCCP MIG-31" }, 20 )
+A2ADispatcher:SetSquadronOverhead( "Maykop", 1 )
 
-A2ADispatcher
-  :SetSquadron( "Mozdok", AIRBASE.Caucasus.Mozdok, { "SQ CCCP MIG-31" }, 20 )
-  :SetSquadronOverhead( "Mozdok", 1.5 )
+A2ADispatcher:SetSquadron( "Mozdok", AIRBASE.Caucasus.Mozdok, { "SQ CCCP MIG-31" }, 20 )
+A2ADispatcher:SetSquadronOverhead( "Mozdok", 1 )
   
-A2ADispatcher
-  :SetSquadron( "Sochi", AIRBASE.Caucasus.Sochi_Adler, { "SQ CCCP SU-27" }, 20 )
-  :SetSquadronOverhead( "Sochi", 1.4 )
+A2ADispatcher:SetSquadron( "Sochi", AIRBASE.Caucasus.Sochi_Adler, { "SQ CCCP SU-27" }, 20 )
+A2ADispatcher:SetSquadronOverhead( "Sochi", 1 )
+A2ADispatcher:SetSquadronGrouping( "Sochi", 2 )
 
-A2ADispatcher
-  :SetSquadron( "Novo", AIRBASE.Caucasus.Novorossiysk, { "SQ CCCP SU-27" }, 20 )
-  :SetSquadronOverhead( "Novo", 1.2 )
-  :SetSquadronGrouping( 3 )
+A2ADispatcher:SetSquadron( "Novo", AIRBASE.Caucasus.Novorossiysk, { "SQ CCCP SU-27" }, 20 )
+A2ADispatcher:SetSquadronOverhead( "Novo", 1 )
+A2ADispatcher:SetSquadronGrouping( "Novo", 3 )
 
 -- Squadron Mineralnye will execute CAP.
 
