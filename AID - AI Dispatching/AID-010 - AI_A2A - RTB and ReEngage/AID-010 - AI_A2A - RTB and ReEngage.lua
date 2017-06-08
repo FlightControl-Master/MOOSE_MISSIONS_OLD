@@ -16,7 +16,7 @@ A2ADispatcher = AI_A2A_DISPATCHER:New( DetectionSetGroup, 6000 )
 -- Initialize the dispatcher, setting up a border zone. This is a polygon, 
 -- which takes the waypoints of a late activated group with the name CCCP Border as the boundaries of the border area.
 -- Any enemy crossing this border will be engaged.
---CCCPBorderZone = ZONE_POLYGON:New( "CCCP Border", GROUP:FindByName( "CCCP Border" ) )
+CCCPBorderZone = ZONE_POLYGON:New( "CCCP Border", GROUP:FindByName( "CCCP Border" ) )
 --A2ADispatcher:InitBorderZone( { CCCPBorderZone } )
 
 -- Initialize the dispatcher, setting up a radius of 100km where any airborne friendly 
@@ -48,5 +48,6 @@ BlueSpawn2 = SPAWN
   :InitLimit( 2, 10 )
   :InitRandomizeTemplate( { "SQ NATO A-10C", "SQ NATO F-15C", "SQ NATO F-16A", "SQ NATO F/A-18", "SQ NATO F-16C" } )
   :InitRandomizeRoute( 0, 0, 30000 )
-  :SpawnScheduled( Frequency, 0 )
+  :InitDelayOn()
+  :SpawnScheduled( Frequency, 0.5 )
 
