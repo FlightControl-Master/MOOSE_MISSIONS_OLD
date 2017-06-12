@@ -33,7 +33,7 @@ A2ADispatcher:SetSquadronGrouping( "Sochi", 2 )
 -- CAP Squadron execution.
 
 CAPZoneWest = ZONE_POLYGON:New( "CAP Zone West", GROUP:FindByName( "CAP Zone West" ) )
-A2ADispatcher:SetSquadronCap( "Sochi", CAPZoneWest, 4000, 8000, 600, 800, "BARO" )
+A2ADispatcher:SetSquadronCap( "Sochi", CAPZoneWest, 4000, 8000, 600, 800, 800, 1200, "BARO" )
 A2ADispatcher:SetSquadronCapInterval( "Sochi", 2, 30, 120, 1 )
 
 A2ADispatcher:SetSquadronGci( "Sochi", 900, 1200 )
