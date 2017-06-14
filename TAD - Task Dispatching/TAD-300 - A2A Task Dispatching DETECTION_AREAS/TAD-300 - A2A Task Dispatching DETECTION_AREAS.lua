@@ -36,18 +36,3 @@ local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "
 TaskDispatcher = TASK_A2A_DISPATCHER:New( Mission, AttackGroups, EWRDetection )
 TaskDispatcher:SetReportInterval(10)
 
--- Now this is REALLY neat. I set the goal of the mission to be the destruction of Target #004.
--- This is just an example, but many more examples can follow...
-
--- Every time a Task becomes Successful, it will trigger the Complete event in the Mission.
--- The mission designer NEED TO OVERRIDE the OnBeforeComplete to prevent the mission from getting into completion 
--- too early!
-
-function Mission:OnBeforeComplete( From, Event, To )
-  local Group004 = GROUP:FindByName( "Target #004" )
-  if Group004:IsAlive() == false then
-    Mission:GetCommandCenter():MessageToCoalition( "Mission Complete!" )
-    return true
-  end
-  return false
-end

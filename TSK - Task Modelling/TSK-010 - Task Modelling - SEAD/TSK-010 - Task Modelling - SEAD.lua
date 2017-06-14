@@ -24,4 +24,4 @@ AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack
 
 TargetSetUnit = SET_UNIT:New():FilterCoalitions("blue"):FilterPrefixes("Target"):FilterStart()
 
-TaskSEAD = TASK_A2G_SEAD:New( Mission, AttackGroups, "SEAD", TargetSetUnit )
+TaskSEAD = TASK_A2G_SEAD:New(Mission,AttackGroups,"SEAD",TargetSetUnit)

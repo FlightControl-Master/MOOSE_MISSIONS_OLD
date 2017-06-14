@@ -3,9 +3,9 @@
 
 
 
-BASE:TraceClass( "UNIT" )
-BASE:TraceClass( "GROUP" )
-BASE:TraceClass( "CLIENT" )
+--BASE:TraceClass( "UNIT" )
+--BASE:TraceClass( "GROUP" )
+--BASE:TraceClass( "CLIENT" )
 
 UnitTankAI1 = _DATABASE:FindUnit( "Smoke Test 1" )
 UnitTankAI2 = _DATABASE:FindUnit( "Smoke Test 2" )

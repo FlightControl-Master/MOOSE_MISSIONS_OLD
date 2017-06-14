@@ -30,3 +30,8 @@ AICapZone:SetControllable( CapPlane )
 AICapZone:SetEngageZone( CapEngageZone ) -- Set the Engage Zone. The AI will only engage when the bogeys are within the CapEngageZone.
 
 AICapZone:__Start( 1 ) -- They should statup, and start patrolling in the PatrolZone.
+
+Plane1Spawn = SPAWN:New( ... )
+Plane2Spawn = SPAWN:New( ... )
+
+AIA2ADispatcher = AI_A2A_DISPATCHER:New( { Spawn...}, dDetection )
