@@ -42,7 +42,7 @@ A2ADispatcher:SetSquadronOverhead( "Novo", 1.5 )
 
 -- Setup the Grouping
 A2ADispatcher:SetSquadronGrouping( "Mineralnye", 1 )
-A2ADispatcher:SetSquadronGrouping( "Sochi", 1 )
+A2ADispatcher:SetSquadronGrouping( "Sochi", 2 )
 A2ADispatcher:SetSquadronGrouping( "Novo", 3 )
 
 -- Setup the Takeoff methods
