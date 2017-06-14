@@ -4,7 +4,7 @@
 -- The player aircraft needs to be ASM and TACAN compatible. Please replace the M2000C by an aircraft you own and can receive TACAN signals
 
 -- Activates the trace to see what BEACON does in the log
-BASE:TraceClass("BEACON")
+--BASE:TraceClass("BEACON")
 BASE:TraceLevel(3)
 
 -- Create our UNITs on which we'll attach a BEACON

@@ -11,17 +11,17 @@ DetectionSetGroup:FilterPrefixes( { "DF CCCP AWACS", "DF CCCP EWR" } )
 DetectionSetGroup:FilterStart()
 
 -- Setup the A2A dispatcher, and initialize it.
-A2ADispatcher = AI_A2A_DISPATCHER:New( DetectionSetGroup, 6000 )
+A2ADispatcher = AI_A2A_DISPATCHER:New( DetectionSetGroup, 30000 )
 
 -- Initialize the dispatcher, setting up a border zone. This is a polygon, 
 -- which takes the waypoints of a late activated group with the name CCCP Border as the boundaries of the border area.
 -- Any enemy crossing this border will be engaged.
 CCCPBorderZone = ZONE_POLYGON:New( "CCCP Border", GROUP:FindByName( "CCCP Border" ) )
---A2ADispatcher:InitBorderZone( { CCCPBorderZone } )
+--A2ADispatcher:SetBorderZone( { CCCPBorderZone } )
 
 -- Initialize the dispatcher, setting up a radius of 100km where any airborne friendly 
 -- without an assignment within 100km radius from a detected target, will engage that target.
-A2ADispatcher:InitEngageRadius( 200000 )
+A2ADispatcher:SetEngageRadius( 200000 )
 
 
 -- Setup the squadrons.
@@ -37,6 +37,9 @@ A2ADispatcher:SetSquadronCap( "Sochi", CAPZoneWest, 4000, 8000, 600, 800, 800, 1
 A2ADispatcher:SetSquadronCapInterval( "Sochi", 2, 30, 120, 1 )
 
 A2ADispatcher:SetSquadronGci( "Sochi", 900, 1200 )
+
+A2ADispatcher:SetSquadronTakeoffInAir("Sochi")
+A2ADispatcher:SetSquadronLandingNearAirbase("Sochi")
 
 
 -- Blue attack simulation
