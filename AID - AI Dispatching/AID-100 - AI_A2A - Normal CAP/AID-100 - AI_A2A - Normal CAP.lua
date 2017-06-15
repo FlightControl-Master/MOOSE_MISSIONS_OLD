@@ -24,7 +24,7 @@ A2ADispatcher:SetBorderZone( { CCCPBorderZone } )
 
 -- Initialize the dispatcher, setting up a radius of 100km where any airborne friendly 
 -- without an assignment within 100km radius from a detected target, will engage that target.
-A2ADispatcher:SetEngageRadius( 300000 )
+A2ADispatcher:SetEngageRadius( 80000 )
 
 -- Setup the squadrons.
 A2ADispatcher:SetSquadron( "Mineralnye", AIRBASE.Caucasus.Mineralnye_Vody, { "SQ CCCP SU-27" }, 20 )
