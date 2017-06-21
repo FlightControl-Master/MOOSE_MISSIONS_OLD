@@ -1,5 +1,5 @@
 ---
--- Name: AID-100 - AI_A2A - Normal CAP
+-- Name: AID-100 - AI_A2A - Demonstration
 -- Author: FlightControl
 -- Date Created: 30 May 2017
 

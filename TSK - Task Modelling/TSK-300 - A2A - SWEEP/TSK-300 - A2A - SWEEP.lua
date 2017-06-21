@@ -24,7 +24,7 @@ do
   
   TargetSetUnit = SET_UNIT:New():FilterCoalitions( "blue" ):FilterPrefixes( "Target" ):FilterStart()
   
-  TaskSWEEP = TASK_SWEEP:New( Mission, AttackGroups, "SWEEP", TargetSetUnit )
+  TaskSWEEP = TASK_A2A_SWEEP:New( Mission, AttackGroups, "SWEEP", TargetSetUnit )
 
 end	
 					
