@@ -26,13 +26,26 @@ local Mission = MISSION
 
 local EWRSet = SET_GROUP:New():FilterPrefixes( "EWR" ):FilterCoalitions("red"):FilterStart()
 
-local EWRDetection = DETECTION_AREAS:New( EWRSet, 6000 )
-EWRDetection:SetFriendliesRange( 10000 )
-EWRDetection:SetDetectionInterval(30)
+local EWRDetection = DETECTION_AREAS:New( EWRSet, 30000 )
+EWRDetection:SetFriendliesRange( 80000 )
+EWRDetection:SetDetectionInterval( 30 )
 
 
 local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Defender" ):FilterStart()
 
 TaskDispatcher = TASK_A2A_DISPATCHER:New( Mission, AttackGroups, EWRDetection )
-TaskDispatcher:SetReportInterval(10)
+TaskDispatcher:SetReportInterval( 10 )
+
+--- @param #TaskDispatcher self
+-- @param From 
+-- @param Event
+-- @param To
+-- @param Tasking.Task_A2A#TASK_A2A Task
+-- @param Wrapper.Unit#UNIT TaskUnit
+-- @param #string PlayerName
+function TaskDispatcher:OnAfterAssign( From, Event, To, Task, TaskUnit, PlayerName )
+  Task:SetScoreOnDestroy( "Player " .. PlayerName .. " destroyed a target", 20, TaskUnit )
+  Task:SetScoreOnSuccess( "The task has been successfully completed!", 200, TaskUnit )
+  Task:SetPenaltyOnFailed( "The task has failed completion!", -100, TaskUnit )
+end
 
