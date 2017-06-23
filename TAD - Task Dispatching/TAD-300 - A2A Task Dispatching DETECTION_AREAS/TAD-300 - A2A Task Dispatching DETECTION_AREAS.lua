@@ -31,7 +31,7 @@ EWRDetection:SetFriendliesRange( 10000 )
 EWRDetection:SetDetectionInterval(30)
 
 
-local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
+local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Defender" ):FilterStart()
 
 TaskDispatcher = TASK_A2A_DISPATCHER:New( Mission, AttackGroups, EWRDetection )
 TaskDispatcher:SetReportInterval(10)
