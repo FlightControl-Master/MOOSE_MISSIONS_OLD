@@ -1,19 +1,11 @@
 ---
--- Name: AID-100 - AI_A2A - Demonstration
+-- Name: AID-200 - AI_A2A - GCICAP Demonstration
 -- Author: FlightControl
 -- Date Created: 30 May 2017
 
 
--- Define a SET_GROUP object that builds a collection of groups that define the EWR network.
--- Here we build the network with all the groups that have a name starting with DF CCCP AWACS and DF CCCP EWR.
-DetectionSetGroup = SET_GROUP:New()
-DetectionSetGroup:FilterPrefixes( { "DF CCCP AWACS", "DF CCCP EWR" } )
-DetectionSetGroup:FilterStart()
-
-Detection = DETECTION_AREAS:New( DetectionSetGroup, 30000 )
-
 -- Setup the A2A dispatcher, and initialize it.
-A2ADispatcher = AI_A2A_DISPATCHER:New( Detection )
+A2ADispatcher = AI_A2A_DISPATCHER_GCICAP:New( { "DF CCCP AWACS", "DF CCCP EWR" }, 30000 )
 
 -- Enable the tactical display panel.
 A2ADispatcher:SetTacticalDisplay( true )

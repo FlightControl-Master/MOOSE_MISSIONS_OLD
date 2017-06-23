@@ -31,6 +31,12 @@ SetSAMGroup = SET_GROUP:New()
   :FilterPrefixes( "SAM" )
   :FilterStart()
   :SetIteratorIntervals( 5, 10 )
+  
+SetGroundGroup = SET_GROUP:New()
+  :FilterCategories( "ground" )
+  :FilterStart()
+  
+SetGroundGroup:Flush()
 
 SpawnUS_Plane = SPAWN:New( 'Spawn Test USA Plane')
 GroupUS_Plane = SpawnUS_Plane:Spawn()
