@@ -42,9 +42,9 @@ TaskDispatcher = TASK_A2G_DISPATCHER:New( Mission, AttackGroups, DetectionTypes 
 -- @param #string PlayerName
 function TaskDispatcher:OnAfterAssign( From, Event, To, Task, TaskUnit, PlayerName )
   self:E( "I am in assigned ... " )
-  Task:SetScoreOnDestroy( "Player " .. PlayerName .. " destroyed a target", 50, TaskUnit )
+  Task:SetScoreOnProgress( "Player " .. PlayerName .. " destroyed a target", 50, TaskUnit )
   Task:SetScoreOnSuccess( "The task has been successfully completed!", 200, TaskUnit )
-  Task:SetPenaltyOnFailed( "The task has failed completion!", 100, TaskUnit )
+  Task:SetScoreOnFail( "The task has failed completion!", 100, TaskUnit )
 end
 
 -- Now this is REALLY neat. I set the goal of the mission to be the destruction of Target #004.

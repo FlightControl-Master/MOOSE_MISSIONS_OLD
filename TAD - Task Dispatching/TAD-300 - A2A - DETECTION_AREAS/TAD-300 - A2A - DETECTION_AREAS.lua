@@ -44,8 +44,8 @@ TaskDispatcher:SetReportInterval( 10 )
 -- @param Wrapper.Unit#UNIT TaskUnit
 -- @param #string PlayerName
 function TaskDispatcher:OnAfterAssign( From, Event, To, Task, TaskUnit, PlayerName )
-  Task:SetScoreOnDestroy( "Player " .. PlayerName .. " destroyed a target", 20, TaskUnit )
-  Task:SetScoreOnSuccess( "The task has been successfully completed!", 200, TaskUnit )
-  Task:SetPenaltyOnFailed( "The task has failed completion!", -100, TaskUnit )
+  Task:SetScoreOnProgress( PlayerName, 20, TaskUnit )
+  Task:SetScoreOnSuccess( PlayerName, 200, TaskUnit )
+  Task:SetScoreOnFail( PlayerName, -100, TaskUnit )
 end
 
