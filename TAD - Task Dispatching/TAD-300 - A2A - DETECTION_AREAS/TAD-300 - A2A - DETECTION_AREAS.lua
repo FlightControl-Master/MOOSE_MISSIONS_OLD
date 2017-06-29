@@ -14,27 +14,49 @@
 -- 1. Observe the EWR's detecting targets and grouping them. 
 -- 2. Check that the HQ provides menus to engage on a task set by the EWRs.
 -- 
-local HQ = GROUP:FindByName( "HQ", "Bravo" )
+HQ = GROUP:FindByName( "HQ", "Bravo" )
 
-local CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
+CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
 
-local Scoring = SCORING:New( "A2A Dispatching demo" )
+Scoring = SCORING:New( "A2A Dispatching demo" )
 
-local Mission = MISSION
+Mission = MISSION
   :New( CommandCenter, "A2A Mission", "High", "Watch the air enemy units being detected.", coalition.side.RED )
   :AddScoring( Scoring )
 
-local EWRSet = SET_GROUP:New():FilterPrefixes( "EWR" ):FilterCoalitions("red"):FilterStart()
+EWRSet = SET_GROUP:New():FilterPrefixes( "EWR Red" ):FilterCoalitions("red"):FilterStart()
 
-local EWRDetection = DETECTION_AREAS:New( EWRSet, 30000 )
+EWRDetection = DETECTION_AREAS:New( EWRSet, 30000 )
 EWRDetection:SetFriendliesRange( 80000 )
 EWRDetection:SetDetectionInterval( 30 )
 
 
-local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Defender" ):FilterStart()
+AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Defender" ):FilterStart()
 
 TaskDispatcher = TASK_A2A_DISPATCHER:New( Mission, AttackGroups, EWRDetection )
 TaskDispatcher:SetReportInterval( 10 )
+
+AIDispatcher = AI_A2A_DISPATCHER_GCICAP:New( { "EWR Blue" }, 20000 )
+
+BlueTemplates = {
+  "Defender-1",
+  "Defender-2"
+  }
+
+AIDispatcher:SetSquadron( "001", AIRBASE.Caucasus.Batumi, BlueTemplates, 20 )
+AIDispatcher:SetSquadronGci( "001", 600, 800 )
+
+AIDispatcher:SetSquadron( "002", AIRBASE.Caucasus.Senaki_Kolkhi, BlueTemplates, 20 )
+AIDispatcher:SetSquadronGci( "002", 600, 800 )
+
+AIDispatcher:SetSquadron( "003", AIRBASE.Caucasus.Kobuleti, BlueTemplates,20 )
+AIDispatcher:SetSquadronGci( "003", 600, 800 )
+
+AIDispatcher:SetSquadron( "004", AIRBASE.Caucasus.Kutaisi, BlueTemplates, 20 )
+AIDispatcher:SetSquadronGci( "004", 600, 800 )
+
+
+
 
 --- @param #TaskDispatcher self
 -- @param From 
