@@ -37,5 +37,7 @@ do
   CargoTransportTask:AddDeployZone( ZONE_POLYGON:New( "Repair Zone 2", GROUP:FindByName("Repair Zone 2") ) )
   CargoTransportTask:AddDeployZone( ZONE:New( "Delivery Zone" ) )
 
+  CargoTransportTask:SetCargoLimit( 2 )
+
 end	
 					
