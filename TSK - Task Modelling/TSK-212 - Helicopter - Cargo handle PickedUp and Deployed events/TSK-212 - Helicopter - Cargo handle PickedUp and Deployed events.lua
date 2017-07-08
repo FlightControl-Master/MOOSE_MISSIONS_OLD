@@ -30,9 +30,9 @@ do
 
   local SetCargo = SET_CARGO:New():FilterTypes( { "Engineers" } ):FilterStart()
 
-  local EngineersCargoAlpha = CARGO_GROUP:New( GROUP:FindByName( "Engineers Alpha" ), "Engineers", "Team Alpha", 500 )
-  local EngineersCargoBeta = CARGO_GROUP:New( GROUP:FindByName( "Engineers Beta" ), "Engineers", "Team Beta", 500 )
-  local EngineersCargoGamma = CARGO_GROUP:New( GROUP:FindByName( "Engineers Gamma" ), "Engineers", "Team Gamma", 500 )
+  local EngineersCargoAlpha = CARGO_GROUP:New( GROUP:FindByName( "Engineers Alpha" ), "Engineers", "Team Alpha", 500 ):RespawnOnDestroyed(true)  
+  local EngineersCargoBeta = CARGO_GROUP:New( GROUP:FindByName( "Engineers Beta" ), "Engineers", "Team Beta", 500 ):RespawnOnDestroyed(true)
+  local EngineersCargoGamma = CARGO_GROUP:New( GROUP:FindByName( "Engineers Gamma" ), "Engineers", "Team Gamma", 500 ):RespawnOnDestroyed(true)
 
 
   CargoTransportTask = TASK_CARGO_TRANSPORT:New( Mission, Helicopter, "Transport Engineers", SetCargo )
