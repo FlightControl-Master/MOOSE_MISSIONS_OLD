@@ -14,7 +14,7 @@ A2ADispatcher:SetTacticalDisplay( true )
 -- which takes the waypoints of a late activated group with the name CCCP Border as the boundaries of the border area.
 -- Any enemy crossing this border will be engaged.
 CCCPBorderZone = ZONE_POLYGON:New( "CCCP Border", GROUP:FindByName( "CCCP Border" ) )
-A2ADispatcher:SetBorderZone( { CCCPBorderZone } )
+A2ADispatcher:SetBorderZone( CCCPBorderZone )
 
 
 

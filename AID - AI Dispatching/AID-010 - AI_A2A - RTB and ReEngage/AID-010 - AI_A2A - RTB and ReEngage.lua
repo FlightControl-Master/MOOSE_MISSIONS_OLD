@@ -17,7 +17,7 @@ A2ADispatcher = AI_A2A_DISPATCHER:New( DetectionSetGroup, 30000 )
 -- which takes the waypoints of a late activated group with the name CCCP Border as the boundaries of the border area.
 -- Any enemy crossing this border will be engaged.
 CCCPBorderZone = ZONE_POLYGON:New( "CCCP Border", GROUP:FindByName( "CCCP Border" ) )
---A2ADispatcher:SetBorderZone( { CCCPBorderZone } )
+--A2ADispatcher:SetBorderZone( CCCPBorderZone )
 
 -- Initialize the dispatcher, setting up a radius of 100km where any airborne friendly 
 -- without an assignment within 100km radius from a detected target, will engage that target.

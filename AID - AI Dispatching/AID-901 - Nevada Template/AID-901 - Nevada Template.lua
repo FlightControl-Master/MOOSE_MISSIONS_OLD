@@ -156,7 +156,7 @@ BorderZone = ZONE_POLYGON:New( "Border Name", GROUP:FindByName( "Border Zone Gro
 
 ---  This sets the border zone BorderZone object to to the A2ADispatcher object using the method :SetBorderZone(). 
 
-A2ADispatcher:SetBorderZone( { BorderZone } )
+A2ADispatcher:SetBorderZone( BorderZone )
 
 
 ---  F/ SET THE ENGAGE RADIUS
