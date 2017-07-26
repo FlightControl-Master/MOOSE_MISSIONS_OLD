@@ -33,7 +33,7 @@ local Mission = MISSION
 
 local FACSet = SET_GROUP:New():FilterPrefixes( "FAC" ):FilterCoalitions("red"):FilterStart()
 
-local FACAreas = DETECTION_AREAS:New( FACSet, 1500 )
+local FACAreas = DETECTION_AREAS:New( FACSet, 10000 )
 FACAreas:BoundDetectedZones()
 
 local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
