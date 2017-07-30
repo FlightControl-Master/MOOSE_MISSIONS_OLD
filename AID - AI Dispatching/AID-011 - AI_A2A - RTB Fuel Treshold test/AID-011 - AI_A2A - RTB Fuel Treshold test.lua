@@ -1,7 +1,7 @@
 ---
--- Name: AID-100 - AI_A2A - Normal CAP
+-- Name: AID-011 - AI_A2A - RTB Fuel Treshold test
 -- Author: FlightControl
--- Date Created: 30 May 2017
+-- Date Created: 30 Jul 2017
 
 
 -- Define a SET_GROUP object that builds a collection of groups that define the EWR network.
@@ -25,8 +25,11 @@ CCCPBorderZone = ZONE_POLYGON:New( "CCCP Border", GROUP:FindByName( "CCCP Border
 -- without an assignment within 100km radius from a detected target, will engage that target.
 A2ADispatcher:SetEngageRadius( 200000 )
 
+
 A2ADispatcher:SetTacticalDisplay( true )
 
+-- Set the fuel treshold to 40%. Airplanes will return when only 40% of fuel left in the tank.
+A2ADispatcher:SetDefaultFuelTreshold( 0.4 )
 
 -- Setup the squadrons.
 
@@ -42,19 +45,7 @@ A2ADispatcher:SetSquadronCapInterval( "Sochi", 2, 30, 120, 1 )
 
 A2ADispatcher:SetSquadronGci( "Sochi", 900, 1200 )
 
-A2ADispatcher:SetSquadronTakeoffInAir("Sochi")
-A2ADispatcher:SetSquadronLandingNearAirbase("Sochi")
+A2ADispatcher:SetSquadronTakeoffFromParkingHot("Sochi")
+A2ADispatcher:SetSquadronLandingAtEngineShutdown("Sochi")
 
-
--- Blue attack simulation
-
-local Frequency = 450
-
-BlueSpawn2 = SPAWN
-  :New( "RT NATO 2" )
-  :InitLimit( 2, 10 )
-  :InitRandomizeTemplate( { "SQ NATO A-10C", "SQ NATO F-15C", "SQ NATO F-16A", "SQ NATO F/A-18", "SQ NATO F-16C" } )
-  :InitRandomizeRoute( 0, 0, 30000 )
-  :InitDelayOn()
-  :SpawnScheduled( Frequency, 0.5 )
 
