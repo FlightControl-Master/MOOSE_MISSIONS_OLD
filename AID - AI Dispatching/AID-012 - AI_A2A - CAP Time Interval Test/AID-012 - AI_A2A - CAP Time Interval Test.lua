@@ -1,5 +1,5 @@
 ---
--- Name: AID-011 - AI_A2A - RTB Fuel Threshold test
+-- Name: AID-012 - AI_A2A - CAP Time Interval Test
 -- Author: FlightControl
 -- Date Created: 30 Jul 2017
 
@@ -28,8 +28,8 @@ A2ADispatcher:SetEngageRadius( 200000 )
 
 A2ADispatcher:SetTacticalDisplay( true )
 
--- Set the fuel treshold to 40%. Airplanes will return when only 40% of fuel left in the tank.
-A2ADispatcher:SetDefaultFuelThreshold( 0.4 )
+A2ADispatcher:SetDefaultCapLimit( 2 )
+A2ADispatcher:SetDefaultCapTimeInterval( 300, 300 ) -- Spawn each 5 minutes.
 
 -- Setup the squadrons.
 
@@ -41,7 +41,7 @@ A2ADispatcher:SetSquadronGrouping( "Sochi", 2 )
 
 CAPZoneWest = ZONE_POLYGON:New( "CAP Zone West", GROUP:FindByName( "CAP Zone West" ) )
 A2ADispatcher:SetSquadronCap( "Sochi", CAPZoneWest, 4000, 8000, 600, 800, 800, 1200, "BARO" )
-A2ADispatcher:SetSquadronCapInterval( "Sochi", 2, 30, 120, 1 )
+
 
 A2ADispatcher:SetSquadronGci( "Sochi", 900, 1200 )
 
