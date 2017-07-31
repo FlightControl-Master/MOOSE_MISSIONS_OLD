@@ -31,6 +31,9 @@ A2ADispatcher:SetTacticalDisplay( true )
 -- Test intercept.
 A2ADispatcher:SetIntercept( 450 )
 
+-- Test an other disengage radius.
+A2ADispatcher:SetDisengageRadius( 150000 )
+
 -- Setup the squadrons.
 
 A2ADispatcher:SetSquadron( "Sochi", AIRBASE.Caucasus.Sochi_Adler, { "SQ CCCP MIG-31" }, 20 )
