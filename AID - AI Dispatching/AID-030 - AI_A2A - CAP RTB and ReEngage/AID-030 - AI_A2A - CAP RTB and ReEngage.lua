@@ -1,5 +1,5 @@
 ---
--- Name: AID-010 - AI_A2A - RTB and ReEngage
+-- Name: AID-030 - AI_A2A - CAP RTB and ReEngage
 -- Author: FlightControl
 -- Date Created: 30 May 2017
 
@@ -25,24 +25,28 @@ CCCPBorderZone = ZONE_POLYGON:New( "CCCP Border", GROUP:FindByName( "CCCP Border
 -- without an assignment within 100km radius from a detected target, will engage that target.
 A2ADispatcher:SetEngageRadius( 200000 )
 
+A2ADispatcher:SetDisengageRadius( 200000 )
+
 A2ADispatcher:SetTacticalDisplay( true )
 
 
 -- Setup the squadrons.
 
 A2ADispatcher:SetSquadron( "Sochi", AIRBASE.Caucasus.Sochi_Adler, { "SQ CCCP SU-27" }, 20 )
-A2ADispatcher:SetSquadronGci( "Sochi", 900, 1200 )
+CAPZoneWest = ZONE_POLYGON:New( "CAP Zone West", GROUP:FindByName( "CAP Zone West" ) )
+A2ADispatcher:SetSquadronCap( "Sochi", CAPZoneWest, 4000, 8000, 600, 800, 800, 1200, "BARO" )
+A2ADispatcher:SetSquadronCapInterval( "Sochi", 4, 30, 120, 1 )
 
 A2ADispatcher:SetDefaultTakeoffFromParkingCold()
 A2ADispatcher:SetDefaultLandingAtEngineShutdown()
 
 -- Blue attack simulation
 
-local Frequency = 180
+local Frequency = 600
 
 BlueSpawn2 = SPAWN
   :New( "RT NATO 2" )
-  :InitLimit( 8, 40 )
+  :InitLimit( 2, 40 )
   :InitRandomizeTemplate( { "SQ NATO A-10C", "SQ NATO F-15C", "SQ NATO F-16A", "SQ NATO F/A-18", "SQ NATO F-16C" } )
   :InitRandomizeRoute( 0, 0, 30000 )
   :InitDelayOn()

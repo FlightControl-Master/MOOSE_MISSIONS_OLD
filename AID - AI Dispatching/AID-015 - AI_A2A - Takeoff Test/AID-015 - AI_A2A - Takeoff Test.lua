@@ -1,7 +1,7 @@
 ---
--- Name: AID-010 - AI_A2A - RTB and ReEngage
+-- Name: AID-015 - AI_A2A - Takeoff Test
 -- Author: FlightControl
--- Date Created: 30 May 2017
+-- Date Created: 01 Aug 2017
 
 
 -- Define a SET_GROUP object that builds a collection of groups that define the EWR network.
@@ -25,26 +25,29 @@ CCCPBorderZone = ZONE_POLYGON:New( "CCCP Border", GROUP:FindByName( "CCCP Border
 -- without an assignment within 100km radius from a detected target, will engage that target.
 A2ADispatcher:SetEngageRadius( 200000 )
 
+
 A2ADispatcher:SetTacticalDisplay( true )
 
+-- Test intercept.
+A2ADispatcher:SetIntercept( 450 )
+
+-- Test an other disengage radius.
+A2ADispatcher:SetDisengageRadius( 20000 )
 
 -- Setup the squadrons.
 
-A2ADispatcher:SetSquadron( "Sochi", AIRBASE.Caucasus.Sochi_Adler, { "SQ CCCP SU-27" }, 20 )
+A2ADispatcher:SetSquadron( "Sochi", AIRBASE.Caucasus.Sochi_Adler, { "SQ CCCP MIG-31" }, 20 )
 A2ADispatcher:SetSquadronGci( "Sochi", 900, 1200 )
+A2ADispatcher:SetSquadronTakeoffFromParkingCold( "Sochi" )
 
-A2ADispatcher:SetDefaultTakeoffFromParkingCold()
-A2ADispatcher:SetDefaultLandingAtEngineShutdown()
+A2ADispatcher:SetSquadron( "Gelend", AIRBASE.Caucasus.Gelendzhik, { "SQ CCCP SU-27" }, 20 )
+A2ADispatcher:SetSquadronGci( "Gelend", 800, 1200 )
+A2ADispatcher:SetSquadronTakeoffFromRunway( "Gelend" )
 
--- Blue attack simulation
+A2ADispatcher:SetSquadron( "Anapa", AIRBASE.Caucasus.Anapa_Vityazevo, { "SQ CCCP SU-27" }, 20 )
+A2ADispatcher:SetSquadronGci( "Anapa", 800, 1200 )
+A2ADispatcher:SetSquadronTakeoffFromRunway( "Anapa" )
 
-local Frequency = 180
-
-BlueSpawn2 = SPAWN
-  :New( "RT NATO 2" )
-  :InitLimit( 8, 40 )
-  :InitRandomizeTemplate( { "SQ NATO A-10C", "SQ NATO F-15C", "SQ NATO F-16A", "SQ NATO F/A-18", "SQ NATO F-16C" } )
-  :InitRandomizeRoute( 0, 0, 30000 )
-  :InitDelayOn()
-  :SpawnScheduled( Frequency, 0.5 )
-
+A2ADispatcher:SetSquadron( "Novo", AIRBASE.Caucasus.Novorossiysk, { "SQ CCCP SU-27" }, 20 )
+A2ADispatcher:SetSquadronGci( "Novo", 800, 1200 )
+A2ADispatcher:SetSquadronTakeoffFromRunway( "Novo" )

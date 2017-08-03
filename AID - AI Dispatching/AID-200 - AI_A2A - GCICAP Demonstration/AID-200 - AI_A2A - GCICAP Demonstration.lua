@@ -22,7 +22,7 @@ A2ADispatcher:SetBorderZone( CCCPBorderZone )
 
 A2ADispatcher:SetDefaultTakeoffFromParkingCold()
 A2ADispatcher:SetDefaultLandingAtEngineShutdown()
-A2ADispatcher:SetDefaultFuelThreshold( 0.70 )
+A2ADispatcher:SetDefaultFuelThreshold( 0.20 )
 A2ADispatcher:SetIntercept( 450 )
 A2ADispatcher:SetDisengageRadius( 100000 )
 A2ADispatcher:SetEngageRadius( 50000 )
