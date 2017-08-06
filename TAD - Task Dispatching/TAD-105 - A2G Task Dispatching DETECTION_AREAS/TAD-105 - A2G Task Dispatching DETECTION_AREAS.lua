@@ -34,3 +34,5 @@ local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "
 
 TaskDispatcher = TASK_A2G_DISPATCHER:New( Mission, AttackGroups, FACAreas )
 
+
+MissileTrainer = MISSILETRAINER:New( 100, "Missiles will be destroyed for training when they reach your plane." )
