@@ -1,5 +1,0 @@
-mapResource = 
-{
-    ["ResKey_Action_8"] = "Moose.lua",
-    ["ResKey_Action_9"] = "GRP-503 - NTTR Route at waypoint to random point.lua",
-} -- end of mapResource
