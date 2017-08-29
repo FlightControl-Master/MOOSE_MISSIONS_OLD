@@ -80,8 +80,11 @@ A2ADispatcher:SetSquadronGci( "Mozdok", 900, 1200 )
 A2ADispatcher:SetSquadronGci( "Novo", 900, 2100 )
 A2ADispatcher:SetSquadronGci( "Maykop", 900, 1200 )
 
+CleanUp = CLEANUP_AIRBASE:New( { AIRBASE.Caucasus.Novorossiysk } )
+
+
 -- Blue attack simulation
-local Frequency = 600
+local Frequency = 300
 
 BlueSpawn1 = SPAWN
   :New( "RT NATO 1" )

@@ -33,7 +33,10 @@ RecceDesignation = DESIGNATE:New( CC, RecceDetection, AttackSet )
 RecceDesignation:SetThreatLevelPrioritization( true )
 
 -- Set the possible laser codes.
-RecceDesignation:SetLaserCodes({1113,1131,1256})
+RecceDesignation:GenerateLaserCodes()
+
+RecceDesignation:AddMenuLaserCode( 1113, "Lase with %d for Su-25T" )
+RecceDesignation:AddMenuLaserCode( 1680, "Lase with %d for A-10A" )
 
 -- Start the detection process in 5 seconds.
 RecceDesignation:__Detect( -5 )

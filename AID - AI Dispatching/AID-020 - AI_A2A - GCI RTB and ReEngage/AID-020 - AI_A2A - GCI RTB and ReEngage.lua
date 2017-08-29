@@ -30,15 +30,23 @@ A2ADispatcher:SetTacticalDisplay( true )
 
 -- Setup the squadrons.
 
-A2ADispatcher:SetSquadron( "Sochi", AIRBASE.Caucasus.Sochi_Adler, { "SQ CCCP SU-27" }, 20 )
-A2ADispatcher:SetSquadronGci( "Sochi", 900, 1200 )
+A2ADispatcher:SetSquadron( "Kras1", AIRBASE.Caucasus.Krasnodar_Center, { "SQ CCCP SU-27" } )
+A2ADispatcher:SetSquadronGci( "Kras1", 900, 1200 )
 
-A2ADispatcher:SetDefaultTakeoffFromParkingCold()
-A2ADispatcher:SetDefaultLandingAtEngineShutdown()
+A2ADispatcher:SetSquadron( "Kras2", AIRBASE.Caucasus.Krasnodar_Pashkovsky, { "SQ CCCP SU-27" } )
+A2ADispatcher:SetSquadronGci( "Kras2", 900, 1200 )
+
+A2ADispatcher:SetSquadron( "May", AIRBASE.Caucasus.Maykop_Khanskaya, { "SQ CCCP SU-27" } )
+A2ADispatcher:SetSquadronGci( "May", 900, 1200 )
+
+
+
+A2ADispatcher:SetDefaultTakeoffInAir()
+A2ADispatcher:SetDefaultLandingNearAirbase()
 
 -- Blue attack simulation
 
-local Frequency = 180
+local Frequency = 300
 
 BlueSpawn2 = SPAWN
   :New( "RT NATO 2" )
