@@ -1,0 +1,5 @@
+mapResource = 
+{
+    ["ResKey_Action_88"] = "Moose.lua",
+    ["ResKey_Action_30"] = "SPA-140 - Spawn Client Slots.lua",
+} -- end of mapResource
