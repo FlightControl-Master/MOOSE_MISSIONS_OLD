@@ -49,6 +49,8 @@ RecceDetection = DETECTION_AREAS:New( RecceSetGroup, 1000 )
 AttackSet = SET_GROUP:New():FilterPrefixes("Attack"):FilterStart()
 
 RecceDesignation = DESIGNATE:New( CC, RecceDetection, AttackSet )
-RecceDesignation:SetLaserCodes({1113,1131,1256})
-RecceDesignation:__Detect( -5 )
+RecceDesignation:GenerateLaserCodes()
+RecceDesignation:AddMenuLaserCode( 1113, "Lase for SU-25T (%d)" )
+RecceDesignation:AddMenuLaserCode( 1680, "Lase for A-10A (%d)" )
+
 
