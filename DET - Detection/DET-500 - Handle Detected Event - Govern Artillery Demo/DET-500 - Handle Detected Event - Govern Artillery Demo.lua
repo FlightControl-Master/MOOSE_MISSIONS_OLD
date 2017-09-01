@@ -24,7 +24,7 @@ HQ = GROUP:FindByName( "HQ" )
 CC = COMMANDCENTER:New( HQ, "HQ" )
 
 RecceDetection = DETECTION_UNITS:New( RecceSetGroup )
-RecceDetection:SetDetectionInterval( 5 )
+RecceDetection:SetRefreshTimeInterval( 5 )
 
 RecceDetection:Start()
 

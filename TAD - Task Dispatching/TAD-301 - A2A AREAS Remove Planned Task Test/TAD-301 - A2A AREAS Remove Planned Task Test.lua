@@ -28,13 +28,13 @@ local EWRSet = SET_GROUP:New():FilterPrefixes( "EWR" ):FilterCoalitions("red"):F
 
 local EWRDetection = DETECTION_AREAS:New( EWRSet, 6000 )
 EWRDetection:SetFriendliesRange( 10000 )
-EWRDetection:SetDetectionInterval(30)
+EWRDetection:SetRefreshTimeInterval(30)
 
 
 local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
 
 TaskDispatcher = TASK_A2A_DISPATCHER:New( Mission, AttackGroups, EWRDetection )
-TaskDispatcher:SetReportInterval(10)
+TaskDispatcher:SetRefreshTimeInterval(10)
 
 -- Now this is REALLY neat. I set the goal of the mission to be the destruction of Target #004.
 -- This is just an example, but many more examples can follow...
