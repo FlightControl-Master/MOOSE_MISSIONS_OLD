@@ -78,7 +78,7 @@ do
   EscortHeliDetection = DETECTION_AREAS:New( EscortHeliSetGroup, 1000, 500 )
   
   EscortHeliDetection:BoundDetectedZones()
-  EscortHeliDetection:SetDetectionInterval( 15 )
+  EscortHeliDetection:SetRefreshTimeInterval( 15 )
 
   EscortClientHeli = CLIENT:FindByName( "Lead Helicopter", "Fly around and observe the behaviour of the escort helicopter" ):Alive( EventAliveHelicopter )  
   EscortClientPlane = CLIENT:FindByName( "Lead Plane", "Fly around and observe the behaviour of the escort airplane. Select Navigate->Joun-Up and airplane should follow you. Change speed and directions." )

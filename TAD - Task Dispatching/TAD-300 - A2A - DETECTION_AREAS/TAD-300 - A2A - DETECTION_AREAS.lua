@@ -28,13 +28,13 @@ EWRSet = SET_GROUP:New():FilterPrefixes( "EWR Red" ):FilterCoalitions("red"):Fil
 
 EWRDetection = DETECTION_AREAS:New( EWRSet, 30000 )
 EWRDetection:SetFriendliesRange( 80000 )
-EWRDetection:SetDetectionInterval( 30 )
+EWRDetection:SetRefreshTimeInterval( 30 )
 
 
 AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Defender" ):FilterStart()
 
 TaskDispatcher = TASK_A2A_DISPATCHER:New( Mission, AttackGroups, EWRDetection )
-TaskDispatcher:SetReportInterval( 10 )
+TaskDispatcher:SetRefreshTimeInterval( 10 )
 
 AIDispatcher = AI_A2A_DISPATCHER_GCICAP:New( { "EWR Blue" }, 20000 )
 
