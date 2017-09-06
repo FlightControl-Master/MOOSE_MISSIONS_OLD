@@ -11,11 +11,13 @@ DetectionSetGroup:FilterPrefixes( { "DF CCCP AWACS", "DF CCCP EWR" } )
 DetectionSetGroup:FilterStart()
 
 Detection = DETECTION_AREAS:New( DetectionSetGroup, 30000 )
+Detection:SetRefreshTimeInterval( 10 )
 
 -- Setup the A2A dispatcher, and initialize it.
 A2ADispatcher = AI_A2A_DISPATCHER:New( Detection )
 
 A2ADispatcher:SetTacticalDisplay( true )
+A2ADispatcher:SetRefreshTimeInterval( 10 )
 
 
 A2ADispatcher:SetEngageRadius( 90000 )

@@ -24,19 +24,19 @@ A2ADispatcher:SetEngageRadius( 90000 )
 A2ADispatcher:SetSquadron( "Kras1", AIRBASE.Caucasus.Krasnodar_Pashkovsky, { "SQ CCCP SU-27" } )
 CAPZoneWest = ZONE_POLYGON:New( "CAP Zone West", GROUP:FindByName( "CAP Zone West" ) )
 A2ADispatcher:SetSquadronCap( "Kras1", CAPZoneWest, 4000, 8000, 600, 800, 800, 1200, "BARO" )
-A2ADispatcher:SetSquadronCapInterval( "Kras1", 4, 30, 120, 1 )
+A2ADispatcher:SetSquadronCapInterval( "Kras1", 4, 30, 120 )
 
 --A2ADispatcher:SetSquadron( "May", AIRBASE.Caucasus.Maykop_Khanskaya, { "SQ CCCP SU-27" }, 20 )
 --CAPZoneWest = ZONE_POLYGON:New( "CAP Zone West", GROUP:FindByName( "CAP Zone West" ) )
 --A2ADispatcher:SetSquadronCap( "May", CAPZoneWest, 4000, 8000, 600, 800, 800, 1200, "BARO" )
---A2ADispatcher:SetSquadronCapInterval( "May", 1, 30, 120, 1 )
+--A2ADispatcher:SetSquadronCapInterval( "May", 1, 30, 120 )
 
 A2ADispatcher:SetDefaultTakeoffInAir()
 A2ADispatcher:SetDefaultLandingNearAirbase()
 
 -- Blue attack simulation
 
-local Frequency = 600
+local Frequency = 180
 
 BlueSpawn2 = SPAWN
   :New( "RT NATO" )
