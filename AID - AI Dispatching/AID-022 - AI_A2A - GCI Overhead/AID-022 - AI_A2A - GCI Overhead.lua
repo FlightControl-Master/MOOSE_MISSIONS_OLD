@@ -26,7 +26,11 @@ A2ADispatcher:SetTacticalDisplay( true )
 
 A2ADispatcher:SetSquadron( "May", AIRBASE.Caucasus.Maykop_Khanskaya, { "SQ CCCP SU-27" } )
 A2ADispatcher:SetSquadronGci( "May", 900, 1200 )
-A2ADispatcher:SetSquadronOverhead( "May", 0.5 )
+A2ADispatcher:SetSquadronOverhead( "May", 0.25 )
+
+A2ADispatcher:SetSquadron( "Kras", AIRBASE.Caucasus.Krasnodar_Center, { "SQ CCCP SU-27" } )
+A2ADispatcher:SetSquadronGci( "Kras", 900, 1200 )
+A2ADispatcher:SetSquadronOverhead( "Kras", 1.5 )
 
 A2ADispatcher:SetDefaultTakeoffInAir()
 A2ADispatcher:SetDefaultLandingNearAirbase()
