@@ -4,7 +4,7 @@
 --
 -- # Situation:
 --
--- At Gudauta spawn a ground vehicle, hidden, based on a randomized template
+-- At Gudauta spawn a ground vehicle, hidden, based on a randomized template.
 -- 
 -- # Test cases:
 -- 
