@@ -1,6 +1,6 @@
 -- Name: RAT-004 - Fixed Departure and Destination
 -- Author: funkyfranky
--- Date Created: 14 Sep 2017
+-- Date Created: 16 Sep 2017
 --
 -- # Situation:
 --
@@ -8,9 +8,9 @@
 -- 
 -- # Test cases:
 -- 
--- 1. Observe five Yak-40 aircraft being spawned at Gudauta or Batumi. They destination will be either Gelendzhik or Beslan.
---    After the aircraft arrive at their destination they get despawned and then respawned again at one of the defined departure airports
---    and will then travel to one of the defined destinations again.
+-- 1. Observe five Yak-40 aircraft being spawned at Gudauta or Batumi. Their destination will be either Gelendzhik or Beslan.
+--    After the aircraft arrive at their destination they get despawned and then respawned again at one of the defined departure airports.
+--    Then they will travel to one of the defined destinations again.
 
 -- Create RAT object. The only required parameter is the name of the template group in the mission editor.
 local yak=RAT:New("RAT_Yak")

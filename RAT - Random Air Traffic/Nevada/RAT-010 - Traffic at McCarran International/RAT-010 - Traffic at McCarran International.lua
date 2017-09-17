@@ -1,10 +1,10 @@
--- Name: RAT-010 - Traffic at McCarran Internatinal
+-- Name: RAT-010 - Traffic at McCarran International
 -- Author: funkyfranky
--- Date Created: 14 Sep 2017
+-- Date Created: 16 Sep 2017
 --
 -- # Situation:
 --
--- We want to generate some random air traffic at McCarran International Airport
+-- We want to generate some random air traffic at McCarran International Airport.
 -- 
 -- # Test cases:
 --
@@ -35,6 +35,9 @@ local e3=RAT:New("RAT_E3")
 -- Aircraft are spawned at McCarran. Destinations are random.
 e3:SetDeparture("McCarran International Airport")
 
+-- Enable respawn after landing with a delay of six minutes.
+e3:RespawnAfterLanding(360)
+
 -- Spawn two aircraft.
 e3:Spawn(2)
 
@@ -47,7 +50,6 @@ yak:SetDestination("McCarran International Airport")
 
 -- Spawn two Yak-40.
 yak:Spawn(2)
-
 
 -- Create RAT object from E-3A template.
 local tf51=RAT:New("RAT_TF51")

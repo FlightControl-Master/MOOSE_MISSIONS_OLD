@@ -1,12 +1,12 @@
 -- Name: RAT-006 - Continue Journey
 -- Author: funkyfranky
--- Date Created: 14 Sep 2017
+-- Date Created: 16 Sep 2017
 --
 -- # Situation:
 --
 -- Spawn several aircraft of the same type at Gudauta. Each will get a random destination.
 -- Once the aircraft arrives at its destination, it will be respawned there and continue its journey to another random airport.
--- Note that we do NOT have to set a departure airport.   
+-- Note that we do NOT have to set a departure airport.
 -- 
 -- # Test cases:
 -- 
@@ -18,8 +18,8 @@ local yak=RAT:New("RAT_Yak")
 -- Set Gudauta as departure airport for all spawned aircraft. (Not required for ContinueJourney() to work.)
 yak:SetDeparture("Gudauta")
 
--- This makes aircraft respawn at their destination airport.
+-- This makes aircraft respawn at their destination airport instead of another random airport.
 yak:ContinueJourney()
 
--- Spawn three aircraft.
+-- Spawn five aircraft.
 yak:Spawn(5)

@@ -1,6 +1,6 @@
 -- Name: RAT-008 - Spawn in Air
 -- Author: funkyfranky
--- Date Created: 14 Sep 2017
+-- Date Created: 16 Sep 2017
 --
 -- # Situation:
 --
@@ -46,7 +46,7 @@ local il76=RAT:New("RAT_IL76")
 -- Set takeoff type to air.
 il76:SetTakeoff("air")
 
--- Set departure zones for C-17.
+-- Set departure zones for C-17. You can mix zone names and airport names.
 il76:SetDeparture({"RAT Zone North", "Anapa-Vityazevo"})
 
 -- Spawn eight C-17s.

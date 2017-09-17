@@ -1,6 +1,6 @@
 -- Name: RAT-001 - Basic
 -- Author: funkyfranky
--- Date Created: 14 Sep 2017
+-- Date Created: 16 Sep 2017
 --
 -- # Situation:
 --
@@ -14,5 +14,5 @@
 -- Create RAT object. The only required parameter is the name of the template group in the mission editor.
 local yak=RAT:New("RAT_Yak")
 
--- Spawn five aircraft at random airports with random destination.
+-- Spawn five aircraft.
 yak:Spawn(5)

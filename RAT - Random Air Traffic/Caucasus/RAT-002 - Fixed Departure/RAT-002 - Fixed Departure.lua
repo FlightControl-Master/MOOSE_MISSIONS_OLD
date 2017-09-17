@@ -1,6 +1,6 @@
 -- Name: RAT-002 - Fixed Departure
 -- Author: funkyfranky
--- Date Created: 14 Sep 2017
+-- Date Created: 16 Sep 2017
 --
 -- # Situation:
 --

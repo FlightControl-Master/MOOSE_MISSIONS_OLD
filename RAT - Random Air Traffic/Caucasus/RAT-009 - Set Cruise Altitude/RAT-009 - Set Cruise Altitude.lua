@@ -12,7 +12,8 @@
 -- 
 -- # Test cases:
 --
--- 1. Obsever five Yak-40 being spawned at random airports. They will travel to a random destination but the cruising altitude will not be below 5,000 feet and not be above 20,000 feet. Most aircraft will travel at or near 10,000 ft. 
+-- 1. Obsever five Yak-40 being spawned at random airports. They will travel to a random destination but the cruising altitude will not be below 5,000 feet and not be above 20,000 feet.
+--    Most aircraft will travel at or near 10,000 ft. 
 -- 2. Observe two C-17 being spawned at Tbilisi-Lochini. They will travel to a random destination but the cruise alt is set to be > 5 km.
 
 
