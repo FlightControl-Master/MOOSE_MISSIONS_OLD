@@ -1,6 +1,6 @@
 -- Name: RAT-006 - Continue Journey
 -- Author: funkyfranky
--- Date Created: 16 Sep 2017
+-- Date Created: 24 Sep 2017
 --
 -- # Situation:
 --

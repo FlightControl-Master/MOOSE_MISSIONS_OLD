@@ -23,7 +23,7 @@
 local bf109=RAT:New("RAT_Bf109")
 
 -- Airports are restricted to red.
-bf109:SetCoalition("redonly")
+bf109:SetCoalition("sameonly")
 
 -- Spawn four Bf-109.
 bf109:Spawn(4)
@@ -32,7 +32,7 @@ bf109:Spawn(4)
 local fw190=RAT:New("RAT_Fw190")
 
 -- Again, airports restricted to red.
-fw190:SetCoalition("redonly")
+fw190:SetCoalition("sameonly")
 
 -- Spawn two FW-190.
 fw190:Spawn(2)
@@ -43,16 +43,23 @@ fw190:Spawn(2)
 local tf51=RAT:New("RAT_TF-51")
 
 -- Allow only blue airports for departure and destination. 
-tf51:SetCoalition("blueonly")
+tf51:SetCoalition("sameonly")
+
+-- We exclude ever airport across the channel.
+tf51:ExcludedAirports({"Needs Oar Point", "Funtington", "Tangmere", "Ford", "Chailey"})
 
 -- Spawn three TF-51.
 tf51:Spawn(3)
+
 
 -- Creat RAT object from Spitfire template.
 local spit=RAT:New("RAT_Spit")
 
 -- Blue airports only.
-spit:SetCoalition("blueonly")
+spit:SetCoalition("sameonly")
+
+-- We exclude ever airport across the channel.
+spit:ExcludedAirports({"Needs Oar Point", "Funtington", "Tangmere", "Ford", "Chailey"})
 
 -- Spawn two two-ship flights.
 spit:Spawn(2)
@@ -68,6 +75,9 @@ local spit_commute=RAT:New("RAT_Spit", "RAT_Spit_Commute")
 spit_commute:SetDeparture("Chailey")
 spit_commute:SetDestination("Le Molay")
 spit_commute:Commute()
+
+-- Set another livery for these aircraft.
+spit_commute:Livery("RAF, No. 126 Squadron, Harrowbeer")
 
 -- Spawn one two-ship flight.
 spit_commute:Spawn()

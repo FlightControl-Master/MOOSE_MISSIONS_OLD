@@ -1,6 +1,6 @@
 -- Name: RAT-004 - Fixed Departure and Destination
 -- Author: funkyfranky
--- Date Created: 16 Sep 2017
+-- Date Created: 24 Sep 2017
 --
 -- # Situation:
 --

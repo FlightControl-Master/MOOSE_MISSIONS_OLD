@@ -1,6 +1,6 @@
 -- Name: RAT-010 - Traffic at McCarran International
 -- Author: funkyfranky
--- Date Created: 16 Sep 2017
+-- Date Created: 24 Sep 2017
 --
 -- # Situation:
 --
@@ -45,11 +45,15 @@ e3:Spawn(2)
 -- Create RAT object from Yak-40 template.
 local yak=RAT:New("RAT_YAK")
 
+-- These are the airports a Yak-40 gets a parking slot.
+yak:SetDeparture({"Tonopah Airport", "Tonopah Test Range Airfield", "Henderson Executive Airport", "Nellis AFB", "Groom Lake", "Laughlin Airport"})
+
 -- Destination McCarran.
 yak:SetDestination("McCarran International Airport")
 
--- Spawn two Yak-40.
-yak:Spawn(2)
+-- Spawn eight Yak-40.
+yak:Spawn(8)
+
 
 -- Create RAT object from E-3A template.
 local tf51=RAT:New("RAT_TF51")
@@ -60,5 +64,5 @@ tf51:SetDeparture({"Henderson Executive Airport", "Boulder City Airport", "Echo 
 -- All will fly to McCarran.
 tf51:SetDestination("McCarran International Airport")
 
--- Spawn two TF-51D
-tf51:Spawn(2)
+-- Spawn four TF-51D
+tf51:Spawn(4)

@@ -1,6 +1,6 @@
 -- Name: RAT-011 - Traffic at Nellis AFB
 -- Author: funkyfranky
--- Date Created: 17 Sep 2017
+-- Date Created: 24 Sep 2017
 --
 -- # Situation:
 --

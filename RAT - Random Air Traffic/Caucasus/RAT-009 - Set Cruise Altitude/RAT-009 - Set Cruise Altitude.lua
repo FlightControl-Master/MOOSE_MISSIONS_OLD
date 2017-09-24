@@ -1,6 +1,6 @@
 -- Name: RAT-009 - Set Cruise Altitude
 -- Author: funkyfranky
--- Date Created: 14 Sep 2017
+-- Date Created: 24 Sep 2017
 --
 -- # Situation:
 --
