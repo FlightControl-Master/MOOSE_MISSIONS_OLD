@@ -46,8 +46,8 @@ A2ADispatcher:SetSquadronTakeoffFromRunway( "Gelend" )
 
 A2ADispatcher:SetSquadron( "Anapa", AIRBASE.Caucasus.Anapa_Vityazevo, { "SQ CCCP SU-27" }, 20 )
 A2ADispatcher:SetSquadronGci( "Anapa", 800, 1200 )
-A2ADispatcher:SetSquadronTakeoffFromRunway( "Anapa" )
+A2ADispatcher:SetSquadronTakeoffInAir( "Anapa" )
 
 A2ADispatcher:SetSquadron( "Novo", AIRBASE.Caucasus.Novorossiysk, { "SQ CCCP SU-27" }, 20 )
 A2ADispatcher:SetSquadronGci( "Novo", 800, 1200 )
-A2ADispatcher:SetSquadronTakeoffFromRunway( "Novo" )
+A2ADispatcher:SetSquadronTakeoffFromParkingHot( "Novo" )
