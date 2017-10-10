@@ -35,7 +35,7 @@ PlayerPlane = CLIENT:FindByName( "PlayerPlane", "Select Menu item to activate Un
 PlayerPlane:Alive(
   function( Client, SpawnPlane )
   
-    --- @param Functional.Spawn#SPAWN SpawnPlane
+    --- @param Core.Spawn#SPAWN SpawnPlane
     local function ActivatePlane( SpawnPlane )
       SpawnPlane:InitUnControlled( false )
       SpawnPlane:ReSpawn( 1 )
