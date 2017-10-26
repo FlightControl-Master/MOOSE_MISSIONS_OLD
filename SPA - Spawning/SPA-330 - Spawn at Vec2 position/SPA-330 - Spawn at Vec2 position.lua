@@ -39,6 +39,7 @@ SCHEDULER:New( nil,
       local ZoneName = AirplaneZones[ math.random( 1, 3 ) ]
       local SpawnVec3 = POINT_VEC3:NewFromVec3( ZONE:New( ZoneName ):GetVec3() )
       SpawnAirplanes:SpawnFromVec2( SpawnVec3:GetVec2() )  
+      SpawnAirplanes:SpawnFromVec2( SpawnVec3:GetVec2(), 200, 500 )  
     end
     
     do
@@ -46,6 +47,7 @@ SCHEDULER:New( nil,
       local ZoneName = HelicopterZones[ math.random( 1, 3 ) ]
       local SpawnVec3 = POINT_VEC3:NewFromVec3( ZONE:New( ZoneName ):GetVec3() )
       SpawnHelicopters:SpawnFromVec2( SpawnVec3:GetVec2() ) 
+      SpawnHelicopters:SpawnFromVec2( SpawnVec3:GetVec2(), 2000, 4000 ) 
     end
     
     do

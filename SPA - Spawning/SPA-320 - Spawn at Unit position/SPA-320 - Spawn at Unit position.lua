@@ -30,6 +30,7 @@ SCHEDULER:New( nil,
       local UnitName = AirplaneUnits[ math.random( 1, 3 ) ]
       local SpawnUnit = UNIT:FindByName( UnitName )
       SpawnAirplanes:SpawnFromUnit( SpawnUnit )  
+      SpawnAirplanes:SpawnFromUnit( SpawnUnit, 200, 500 )  
     end
     
     do
@@ -37,6 +38,7 @@ SCHEDULER:New( nil,
       local UnitName = HelicopterUnits[ math.random( 1, 3 ) ]
       local SpawnUnit = UNIT:FindByName( UnitName )
       SpawnHelicopters:SpawnFromUnit( SpawnUnit )  
+      SpawnHelicopters:SpawnFromUnit( SpawnUnit, 500, 2000 )  
     end
     
     do

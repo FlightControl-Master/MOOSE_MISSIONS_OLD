@@ -30,6 +30,7 @@ SCHEDULER:New( nil,
       local StaticName = AirplaneStatics[ math.random( 1, 3 ) ]
       local SpawnStatic = STATIC:FindByName( StaticName )
       SpawnAirplanes:SpawnFromUnit( SpawnStatic )  
+      SpawnAirplanes:SpawnFromUnit( SpawnStatic, 2000, 4000 )  
     end
     
     do
@@ -37,6 +38,7 @@ SCHEDULER:New( nil,
       local StaticName = HelicopterStatics[ math.random( 1, 3 ) ]
       local SpawnStatic = STATIC:FindByName( StaticName )
       SpawnHelicopters:SpawnFromUnit( SpawnStatic )  
+      SpawnHelicopters:SpawnFromUnit( SpawnStatic, 200, 500 )  -- Spawn between 200 and 500 meters.
     end
     
     do
