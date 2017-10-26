@@ -1,3 +1,0 @@
-
-AirbasePolice = AIRBASEPOLICE_NORMANDY:New()
-

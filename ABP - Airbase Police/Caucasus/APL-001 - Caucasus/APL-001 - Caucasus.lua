@@ -1,2 +1,0 @@
-
-AirbasePolice = AIRBASEPOLICE_CAUCASUS:New()
