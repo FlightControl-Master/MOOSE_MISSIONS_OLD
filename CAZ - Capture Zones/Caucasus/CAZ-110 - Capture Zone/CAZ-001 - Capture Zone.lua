@@ -1,12 +1,8 @@
 ---
 -- Name: CAZ-001 - Capture Zone
 -- Author: FlightControl
--- Date Created: 13 January 2017
+-- Date Created: 11 Nov 2017
 --
--- # Situation:
---
--- # Test cases:
--- 
 
 do -- Setup the Command Centers
   
