@@ -1,11 +1,11 @@
 ---
--- Name: SCO-100 - Scoring of Statics
+-- Name: SCO-100 - Scoring Demo
 -- Author: FlightControl
 -- Date Created: 21 Feb 2017
 --
 -- # Situation:
 -- 
--- A shooting range has been setup. Fly the Ka-50 or the Su-25T to the statics located near the airport, and shoot them.
+-- A shooting range has been setup. Fly the Ka-50 or the Su-25T to the statics and units located near the airport, and shoot them.
 -- 
 -- # Test cases:
 -- 
