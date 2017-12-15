@@ -1,38 +1,31 @@
- ---
 -- Name: TAD-130 - A2G - Dynamic Spawning and Detection
 -- Author: FlightControl
 -- Date Created: 04 Nov 2017
 --
--- # Situation:
--- 
 -- This mission demonstrates the dynamic task dispatching for Air to Ground operations.
 -- FACA's and FAC's are patrolling around the battle zone, while detecting targets.
 -- The detection method used is the DETECTION_AREAS method, which groups detected targets into zones.
--- 
--- # Test cases: 
--- 
 -- 1. Observe the FAC(A)'s detecting targets and grouping them. 
---    For test, each zone will have a circle of tyres, that are visible on the map too.
 -- 2. Check that the HQ provides menus to engage on a task set by the FACs.
 
 
  
-local HQ = GROUP:FindByName( "HQ", "Bravo HQ" )
+HQ = GROUP:FindByName( "HQ", "Bravo HQ" )
 
-local CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
+CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
 
-local Scoring = SCORING:New( "A2G Dispatching Demo" )
+Scoring = SCORING:New( "A2G Dispatching Demo" )
 
-local Mission = MISSION
+Mission = MISSION
   :New( CommandCenter, "Overlord", "High", "Select to spawn a new target from the menu to test A2G module", coalition.side.RED )
   :AddScoring( Scoring )
 
-local FACSet = SET_GROUP:New():FilterPrefixes( "Fac" ):FilterCoalitions("red"):FilterStart()
+FACSet = SET_GROUP:New():FilterPrefixes( "Fac" ):FilterCoalitions("red"):FilterStart()
 
-local FACAreas = DETECTION_AREAS:New( FACSet, 50 )
+FACAreas = DETECTION_AREAS:New( FACSet, 50 )
 --FACAreas:BoundDetectedZones()
 
-local AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
+AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
 
 TaskDispatcher = TASK_A2G_DISPATCHER:New( Mission, AttackGroups, FACAreas )
 
